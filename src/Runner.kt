@@ -1,12 +1,12 @@
-abstract class Runner(
+abstract class Runner<T>(
     val day: Int,
-    val expectedPartOneTestAnswer: Int? = null,
-    val expectedPartTwoTestAnswer: Int? = null
+    val expectedPartOneTestAnswer: T? = null,
+    val expectedPartTwoTestAnswer: T? = null
 ) {
 
-    abstract fun partOne(input : List<String>) : Int
+    abstract fun partOne(input : List<String>) : T
 
-    abstract fun partTwo(input: List<String>) : Int
+    abstract fun partTwo(input: List<String>) : T
 
     fun solve() {
         test()

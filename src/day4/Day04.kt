@@ -5,7 +5,7 @@ fun main() {
     Day4Runner().solve()
 }
 
-class Day4Runner : Runner(
+class Day4Runner : Runner<Int>(
     day = 4,
     expectedPartOneTestAnswer = 2,
     expectedPartTwoTestAnswer = 4
