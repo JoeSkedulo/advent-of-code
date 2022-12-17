@@ -12,11 +12,11 @@ class Day6Runner : Runner<Int>(
     expectedPartTwoTestAnswer = null
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         return marker(input, 4)
     }
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         return marker(input, 14)
     }
 

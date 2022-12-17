@@ -14,7 +14,7 @@ class Day12Runner : Runner<Int>(
     expectedPartTwoTestAnswer = 29
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         val squares = mapSquares(input)
         val end = squares.first { it.elevation == "E" }
         val start = squares.first { it.elevation == "S" }
@@ -26,7 +26,7 @@ class Day12Runner : Runner<Int>(
         ) ?: throw RuntimeException()
     }
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         val squares = mapSquares(input)
         val end = squares.first { it.elevation == "E" }
         val starts = squares.filter { it.getElevationInt() == 0 }

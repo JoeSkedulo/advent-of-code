@@ -12,7 +12,7 @@ class Day8Runner : Runner<Int>(
     expectedPartTwoTestAnswer = 8
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         val rows = rowsOfTrees(input)
         val columns = columnsOfTrees(rows)
 
@@ -21,7 +21,7 @@ class Day8Runner : Runner<Int>(
             .count()
     }
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         val rows = rowsOfTrees(input)
         val columns = columnsOfTrees(rows)
         val allTress = (columns + rows).flatten().distinctBy { it.coord }

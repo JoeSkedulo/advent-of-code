@@ -12,7 +12,8 @@ class Day5Runner : Runner<String>(
     expectedPartTwoTestAnswer = "MCD"
 ) {
 
-    override fun partOne(input: List<String>): String {
+    override fun partOne(input: List<String>, test: Boolean): String {
+
         val moves = input.filter { line -> line.contains("move") }
         val stacks = buildStacks(input)
 
@@ -30,7 +31,7 @@ class Day5Runner : Runner<String>(
         return stacks.toAnswer()
     }
 
-    override fun partTwo(input: List<String>): String {
+    override fun partTwo(input: List<String>, test: Boolean): String {
         val moves = input.filter { line -> line.contains("move") }
         val stacks = buildStacks(input)
 

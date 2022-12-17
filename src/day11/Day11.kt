@@ -13,7 +13,7 @@ class Day11Runner : Runner<Long>(
     expectedPartTwoTestAnswer = 2713310158
 ) {
 
-    override fun partOne(input: List<String>): Long {
+    override fun partOne(input: List<String>, test: Boolean): Long {
         return solve(
             monkeys = monkeys(input),
             rounds = 20,
@@ -21,7 +21,7 @@ class Day11Runner : Runner<Long>(
         )
     }
 
-    override fun partTwo(input: List<String>): Long {
+    override fun partTwo(input: List<String>, test: Boolean): Long {
         return solve(
             monkeys = monkeys(input),
             rounds = 10000,

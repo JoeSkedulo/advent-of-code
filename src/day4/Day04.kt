@@ -11,7 +11,7 @@ class Day4Runner : Runner<Int>(
     expectedPartTwoTestAnswer = 4
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         return input.map { line ->
             line.toAssignments()
         }.count { (first, second) ->
@@ -20,7 +20,7 @@ class Day4Runner : Runner<Int>(
         }
     }
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         return input.map { line ->
             line.toAssignments()
         }.count { (first, second) ->

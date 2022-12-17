@@ -12,7 +12,7 @@ class Day13Runner : Runner<Int>(
     expectedPartTwoTestAnswer = 140
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         return packetPairs(input)
             .map { (left, right) -> left.compareTo(right) }
             .mapIndexedNotNull { index, comparison -> if (comparison == -1) { index + 1 } else { null }  }
@@ -20,7 +20,7 @@ class Day13Runner : Runner<Int>(
     }
 
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         val dividerPackets = listOf("[[2]]", "[[6]]").map { s -> s.toPacket() }
         return (packetPairs(input).flatten() + dividerPackets)
             .sortedWith { a, b -> a.compareTo(b) }

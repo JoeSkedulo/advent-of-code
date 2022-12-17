@@ -12,13 +12,13 @@ class Day10Runner : Runner<Int>(
     expectedPartTwoTestAnswer = null
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         val cycles = cycles(input)
         return listOf(20, 60, 100, 140, 180, 220)
             .sumOf { cycleIndex -> cycles[cycleIndex - 1].xValue * cycleIndex }
     }
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         val cycles = cycles(input)
         cycles.forEachIndexed { index, cycle ->
             if (index % 40 == 0) {

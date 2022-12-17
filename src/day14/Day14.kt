@@ -18,7 +18,7 @@ class Day14Runner : Runner<Int>(
     expectedPartTwoTestAnswer = 93
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         val scans = getScans(input)
         val grid = createGrid(scans)
         var sandAdded = 0
@@ -34,7 +34,7 @@ class Day14Runner : Runner<Int>(
         return sandAdded
     }
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         val scans = getScans(input)
         val height = scans.flatMap { scan -> scan.points }.maxOf { point -> point.y }
         val grid = createGrid(

@@ -14,14 +14,14 @@ class Day9Runner : Runner<Int>(
     expectedPartTwoTestAnswer = 1
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         return getPositions(input)
             .filter { knot -> knot.index == 1 }
             .distinctBy { knot -> "${knot.x}:${knot.y}" }
             .count()
     }
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         return getPositions(input, knots = 10)
             .filter { knot -> knot.index == 9 }
             .distinctBy { knot -> "${knot.x}:${knot.y}" }

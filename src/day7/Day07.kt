@@ -12,7 +12,7 @@ class Day7Runner : Runner<Int>(
     expectedPartTwoTestAnswer = 24933642
 ) {
 
-    override fun partOne(input: List<String>): Int {
+    override fun partOne(input: List<String>, test: Boolean): Int {
         val contents = directoryContents(input)
         val directories = sizedDirectories(contents)
         return directories
@@ -20,7 +20,7 @@ class Day7Runner : Runner<Int>(
             .sumOf { directory -> directory.size }
     }
 
-    override fun partTwo(input: List<String>): Int {
+    override fun partTwo(input: List<String>, test: Boolean): Int {
         val contents = directoryContents(input)
         val directories = sizedDirectories(contents)
         val totalSize = directories.maxOf { directory ->  directory.size }
